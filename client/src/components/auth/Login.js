@@ -7,7 +7,6 @@ import { loginUser } from "../../actions/authActions";
 class Login extends Component {
   constructor() {
     super();
-
     this.state = {
       email: "",
       password: "",
@@ -16,6 +15,12 @@ class Login extends Component {
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -28,10 +33,6 @@ class Login extends Component {
     }
   }
 
-  onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
-
   onSubmit(e) {
     e.preventDefault();
 
@@ -41,6 +42,10 @@ class Login extends Component {
     };
 
     this.props.loginUser(userData);
+  }
+
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   render() {
