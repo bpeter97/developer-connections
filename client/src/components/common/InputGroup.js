@@ -1,15 +1,15 @@
-import React from "react";
-import classnames from "classnames";
-import PropTypes from "prop-types";
+import React from 'react';
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
 const InputGroup = ({
   name,
   placeholder,
   value,
-  errors,
-  onChange,
+  error,
   icon,
-  type
+  type,
+  onChange
 }) => {
   return (
     <div className="input-group mb-3">
@@ -19,15 +19,15 @@ const InputGroup = ({
         </span>
       </div>
       <input
-        className={classnames("form-control form-control-lg", {
-          "is-invalid": errors
+        className={classnames('form-control form-control-lg', {
+          'is-invalid': error
         })}
         placeholder={placeholder}
         name={name}
         value={value}
         onChange={onChange}
       />
-      {errors && <div className="invalid-feedback">{errors}</div>}
+      {error && <div className="invalid-feedback">{error}</div>}
     </div>
   );
 };
@@ -36,14 +36,14 @@ InputGroup.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
-  error: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
   icon: PropTypes.string,
-  type: PropTypes.string.isRequired
+  error: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
 };
 
 InputGroup.defaultProps = {
-  type: "text"
+  type: 'text'
 };
 
 export default InputGroup;
