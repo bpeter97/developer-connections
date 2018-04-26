@@ -1,7 +1,8 @@
 {
-  "name": "devconnector",
+  "name": "esportconnections",
   "version": "1.0.0",
-  "description": "Social network for developers",
+  "description":
+    "A place where gamers can connect with other gamers, managers, and different professionals in the industry.",
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
