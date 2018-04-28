@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Moment from "react-moment";
+import React, { Component } from 'react';
+import Moment from 'react-moment';
 
 class ProfileCreds extends Component {
   render() {
@@ -11,7 +11,7 @@ class ProfileCreds extends Component {
         <p>
           <Moment format="YYYY/MM/DD">{exp.from}</Moment> -
           {exp.to === null ? (
-            " Now"
+            ' Now'
           ) : (
             <Moment format="YYYY/MM/DD">{exp.to}</Moment>
           )}
@@ -20,14 +20,14 @@ class ProfileCreds extends Component {
           <strong>Position:</strong> {exp.title}
         </p>
         <p>
-          {exp.location === "" ? null : (
+          {exp.location === '' ? null : (
             <span>
               <strong>Location: </strong> {exp.location}
             </span>
           )}
         </p>
         <p>
-          {exp.description === "" ? null : (
+          {exp.description === '' ? null : (
             <span>
               <strong>Description: </strong> {exp.description}
             </span>
@@ -42,7 +42,7 @@ class ProfileCreds extends Component {
         <p>
           <Moment format="YYYY/MM/DD">{edu.from}</Moment> -
           {edu.to === null ? (
-            " Now"
+            ' Now'
           ) : (
             <Moment format="YYYY/MM/DD">{edu.to}</Moment>
           )}
@@ -51,10 +51,10 @@ class ProfileCreds extends Component {
           <strong>Degree:</strong> {edu.degree}
         </p>
         <p>
-          <strong>Field of Study: </strong> {edu.fieldofstudy}
+          <strong>Field Of Study:</strong> {edu.fieldofstudy}
         </p>
         <p>
-          {edu.description === "" ? null : (
+          {edu.description === '' ? null : (
             <span>
               <strong>Description: </strong> {edu.description}
             </span>
@@ -62,7 +62,6 @@ class ProfileCreds extends Component {
         </p>
       </li>
     ));
-
     return (
       <div className="row">
         <div className="col-md-6">
@@ -70,15 +69,16 @@ class ProfileCreds extends Component {
           {expItems.length > 0 ? (
             <ul className="list-group">{expItems}</ul>
           ) : (
-            <p className="text-center">No experience listed.</p>
+            <p className="text-center">No Experience Listed</p>
           )}
         </div>
+
         <div className="col-md-6">
           <h3 className="text-center text-info">Education</h3>
           {eduItems.length > 0 ? (
             <ul className="list-group">{eduItems}</ul>
           ) : (
-            <p className="text-center">No education listed.</p>
+            <p className="text-center">No Education Listed</p>
           )}
         </div>
       </div>
